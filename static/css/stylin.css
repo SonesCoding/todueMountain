@@ -1,0 +1,266 @@
+
+/* 	
+	Student Name: Lillian Sones
+	File Name: styles.css
+    Date: 02/10/2023
+*/
+
+/*CSS RESET*/
+
+html, body, header, div, h1, h2, h3, h4, main, a, ul, li, footer, nav, article, aside, section{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html{
+  background-color: #382d2b;
+}
+
+h1{
+  font-size: .5px;
+}
+
+.jumbotron{
+  background-color: #507250;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: bold;
+  height: auto;
+}
+
+li a{
+  text-decoration: none;
+   color: #382d2b;
+   display: block;
+   padding: 2em;
+}
+
+ul li{
+  list-style-type: none;
+}
+
+/*********************************************/
+/* Styles for basic Navigation bar and attributes thereof */
+
+nav{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color:#302b29;
+}
+
+nav h1{
+   color:#c7bcb9;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: large;
+   font-weight: bold;
+   padding: 1.5em;
+}
+
+nav ul{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   justify-content: space-between;
+}
+
+nav li{
+   display: flex;
+   font-weight: bold;
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 2em;
+}
+
+nav li a{
+   text-decoration: none;
+   color: #c7bcb9;
+   display: block;
+   padding: 2em;
+}
+
+nav li:hover{
+   background-color: #947657;
+   color: #302b29;
+   border:#c7bcb9;
+   border-radius: 40%;
+}
+/*********************************************/
+
+/*********************************************/
+/* Styles for Main */
+main{
+   background:linear-gradient(#302b29, #4b3e38, #507250);
+   font-family: 'Labrada', serif;
+   color: #c7bcb9;
+   height: 100%;
+   width: 100%;
+
+   display: block;
+   text-align: center;
+   align-content: center;
+
+}
+
+main ul{
+   list-style-type: square;
+}
+
+/*********************************************/
+
+
+/* Style rules for table */
+
+table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 15px;
+  background-color: #947657;
+  text-align: center; 
+}
+
+th {
+  font-weight: bold;
+  border: 1px solid #193318; 
+  padding: 8px;
+}
+
+td {
+  border: 1px solid #193318; 
+  padding: 8px;
+}
+
+/*********************************************/
+
+
+
+/*********************************************/
+/*Media Queries*/
+
+/*Styles for Mobile*/
+@media(max-width:480px){
+
+       /* Choose Display*/
+       .mobileDisplay{
+           display: block;
+       }
+     
+       .tabletDisplay{
+           display: none;
+       }
+
+       .deskDisplay{
+           display: none;
+       }
+     
+ /* Rules */
+
+   main{
+    margin: 0;
+   }
+
+   main p{
+       margin: 0% 15%
+   }
+
+   .navbar h1{
+       font-size: 1em;
+       padding: .5em .75em 0em
+   }
+
+ nav li {
+   border-top: none;
+   display: inline-block;
+   text-align: center;
+   padding: .2em 3em 0em;
+ }
+
+   nav{
+       max-width: 100%
+   }
+
+   nav li a{
+
+       font-size: .5em;
+   }
+
+   }
+
+
+
+/* Styles for Tablet  */
+@media screen and (min-width:481px){
+
+       /* Choose Display*/
+       .tabletDisplay{
+       display: block;
+       }
+   
+       .mobileDisplay{
+       display: none;
+       }
+
+       .deskDisplay{
+           display: none;
+       }
+
+         }
+/* Rules */
+
+   nav li {
+     border-top: none;
+     display: inline-block;
+     font-size: 1.25em;
+   }
+   
+   nav li a {
+     padding: 0.5em;
+   }
+   
+
+
+
+/* Styles for Desktop  */
+@media screen and (min-width:1015px){
+
+       /* Choose Display*/
+       .deskDisplay{
+         display: block;
+       }
+       
+       .mobileDisplay{
+         display: none;
+       }
+   
+       .tabletDisplay{
+           display: none;
+         }
+
+       
+}
+/*********************************************/
+
+
+
+
+/*********************************************/
+/* You made  it to the bottom of the styles */
+/* Basic Footer styles */
+
+footer{
+   padding: 3% 0;
+
+   background-color: #193318;
+   color: #795e43;
+
+   text-align: center;
+   font-size: small;
+}
+
+footer a{
+   color: #e2b88d;
+   text-decoration: none;
+}
+/*********************************************/

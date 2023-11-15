@@ -1,0 +1,21 @@
+{% extends 'todueMountain/basic.html'%}
+
+{%load static%}
+{% block title %}
+{{ block.super }}
+{%endblock%}
+
+
+{% block content%}  
+
+<div class='crud-box'>
+    <form
+    method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">
+        Update task</button>
+    </form>
+</div>
+
+        {%endblock%}

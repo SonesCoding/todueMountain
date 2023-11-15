@@ -1,0 +1,53 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+  <link rel="stylesheet" href="{% static 'css/stylin.css' %}">
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+      {% block title %}<title>Basic</title> {%endblock%}
+
+</head>
+
+<body>
+
+  
+<header class="jumbotron jumbotron-fluid text-center mb-0">
+  <div class="container">
+    <h1 class="display-3"></h1>
+    <p class="lead">TODUE MTN.</p>
+                <!--big create entry and create task-->
+  </div> 
+</header>
+
+    <!-- NAV BAR HERE-->
+    <nav>
+    <div class="nav">
+      <ul>
+        <li><a href={% url 'create_entry' %}>Create Journal Entry</a></li>
+        <li><a href={% url 'planner' %}>Planner</a></li>
+        <li><a href={% url 'create_task' %}>Create To-do Task</a></li>
+
+      </ul>
+    </div>
+  </nav>
+          
+<main>
+        {% block content %}
+
+        {% endblock content %}
+</main>
+
+
+
+</body>
+
+<footer>
+</footer>
+
+</html>

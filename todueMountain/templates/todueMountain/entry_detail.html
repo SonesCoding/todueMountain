@@ -1,0 +1,25 @@
+{% extends 'todueMountain/basic.html'%}
+
+{%load static%}
+{% block title %}
+{{ block.super }}
+{%endblock%}
+
+
+{% block content%}  
+
+<div class='crud-box'>
+    <h2>{{journalentry.EntryTitle}}</h2>
+    <hr>
+    <p>{{journalentry.entryText}}</p>
+    <p>Created on: {{journalentry.enteredOn}}</p>
+
+        <button type="button">
+            <a href= "{% url "update_entry" journalentry.id %}">Edit</a>
+        </button>
+        
+        <button type="button">
+            <a href="{% url "delete_entry" journalentry.id %}">Delete</a>
+        </button>
+    </div>
+        {%endblock%}

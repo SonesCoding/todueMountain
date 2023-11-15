@@ -1,0 +1,26 @@
+{% extends 'todueMountain/basic.html'%}
+
+{%load static%}
+{% block title %}
+{{ block.super }}
+{%endblock%}
+
+
+{% block content%}  
+
+<div class='crud-box'>
+<!--eventually will have another checkbox for checked boolean-->
+    <h2>{{tdtask.TaskTitle}}</h2>
+    <hr>
+    <p>{{tdtask.TaskDescr}}<p>
+    <p>Created on: {{tdtask.createdOn}}</p>
+
+        <button type="button">
+            <a href="{% url "update_task" tdtask.id %}">Edit</a>
+        </button>
+        
+        <button type="button">
+            <a href="{% url "delete_task" tdtask.id %}">Delete</a>
+        </button>
+    </div>
+        {%endblock%}
