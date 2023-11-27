@@ -22,7 +22,7 @@ h1{
 }
 
 .jumbotron{
-  background-color: #507250;
+  background-color: #496c49;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: large;
   font-weight: bold;
@@ -90,7 +90,7 @@ nav li:hover{
 /*********************************************/
 /* Styles for Main */
 main{
-   background:linear-gradient(#302b29, #4b3e38, #507250);
+   background:linear-gradient(#302b29, #4b3e38, rgb(93, 125, 93));
    font-family: 'Labrada', serif;
    color: #c7bcb9;
    height: 100%;
@@ -102,9 +102,6 @@ main{
 
 }
 
-main ul{
-   list-style-type: square;
-}
 
 /*********************************************/
 

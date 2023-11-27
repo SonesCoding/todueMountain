@@ -39,8 +39,6 @@ class tdTask(models.Model):
     def __str__(self) -> str:
         return self.TaskTitle
     
-        class Meta:
-            orderedby = ['checked'] 
         #completed tasks will (hopefully) be listed at the bottom of the list
         
 
