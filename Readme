@@ -1,19 +1,5 @@
 
 
-Hello! This is my producivity app that includes a journal and a todo list. 
-
-A lot of the documents I referenced were Django documentation.
-
-
-Here are a couple of things I hope to flesh out eventually:
-
-- Find a way to individually display a message for each day.
-        - {% empty %} is not true when ANYTHING is in the list in the for loop. 
-        -solution: find a way to either count or know there is no objects of that dotf
-
-- Definetly more style
-        -custom images/decor
-        -fleshed out
 
 
 REFERENCES
@@ -26,7 +12,12 @@ https://medium.com/dev-genius/how-i-built-a-django-based-pictorial-journal-in-on
 
 etc:
 https://docs.djangoproject.com/en/4.0/topics/http/shortcuts/#render
+
 https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-editing/
+
 https://code.visualstudio.com/docs/python/tutorial-django#_use-a-template-to-render-a-page
 
+https://meyerweb.com/eric/tools/css/reset/
+
+https://pypi.org/project/django-livereload-server/
 

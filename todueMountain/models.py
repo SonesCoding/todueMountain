@@ -11,14 +11,15 @@ TUE = "Tuesday"
 WED = "Wednesday"
 THUR = "Thursday"
 FRI = "Friday"
-SAT = "Satuday"
+SAT = "Saturday"
 dotwChoices = [(SUN,"Sunday"),
                (MON,"Monday"),
                (TUE,"Tuesday"),
                (WED,"Wednesday"),
                (THUR,"Thursday"),
                (FRI,"Friday"),
-               (SAT,"Saturday")]
+               (SAT,"Saturday"),
+               ]
 
 
 #model for individual tasks; a list of tasks is exclusive to a day
@@ -37,18 +38,14 @@ class tdTask(models.Model):
     createdOn = models.DateField(auto_now_add=True) # will document time it is pub removing a field from the form and less work on user
     Taskdotf = models.CharField(max_length=9,choices=dotwChoices, null=False)
     def __str__(self) -> str:
-        return self.TaskTitle
-    
-        #completed tasks will (hopefully) be listed at the bottom of the list
-        
+        return self.TaskTitle        
 
 #model for journal entries which can be multiple in a day
 
 class journalEntry(models.Model):
 
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, 
-        null = True, blank = True   #MUST change only true for development
+        User, on_delete=models.CASCADE,
     )
     EntryTitle = models.CharField(max_length=200)
     mood = models.CharField(max_length=300)

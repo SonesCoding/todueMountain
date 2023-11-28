@@ -10,4 +10,4 @@ class TaskForm(forms.ModelForm):
 class EntryForm(forms.ModelForm):
         class Meta:
             model = journalEntry
-            fields = ['EntryTitle','mood','entryText']
+            fields = ['EntryTitle','mood','entryText', 'Entrydotf']

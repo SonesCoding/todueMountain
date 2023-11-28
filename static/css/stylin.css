@@ -1,137 +1,212 @@
 
 /* 	
 	Student Name: Lillian Sones
-	File Name: styles.css
-    Date: 02/10/2023
+	File Name: stylin.css
+    Date: 11/2/23
 */
 
-/*CSS RESET*/
+/*CSS RESET- Eric Meyer's work, in my opinion, 
+is a great straightforward reset I will continue to use*/
 
-html, body, header, div, h1, h2, h3, h4, main, a, ul, li, footer, nav, article, aside, section{
-  margin: 0;
-  padding: 0;
-  border: 0;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-
-html{
-  background-color: #382d2b;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
-
-h1{
-  font-size: .5px;
+body {
+	line-height: 1;
 }
-
-.jumbotron{
-  background-color: #496c49;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: large;
-  font-weight: bold;
-  height: auto;
+ol, ul {
+	list-style: none;
 }
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*********************************************/
+/* Create icons/planner nav bar */
 
-li a{
+nav, nav li{
+  display: flex;
+  align-items: center;
   text-decoration: none;
-   color: #382d2b;
-   display: block;
-   padding: 2em;
-}
-
-ul li{
-  list-style-type: none;
 }
 
 /*********************************************/
-/* Styles for basic Navigation bar and attributes thereof */
 
-nav{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   background-color:#302b29;
+body{
+  background-color: rgb(241, 231, 222);
 }
 
-nav h1{
-   color:#c7bcb9;
-   font-family: Georgia, 'Times New Roman', Times, serif;
-   font-size: large;
-   font-weight: bold;
-   padding: 1.5em;
-}
-
-nav ul{
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
-   justify-content: space-between;
-}
-
-nav li{
-   display: flex;
-   font-weight: bold;
-   font-family: 'Courier New', Courier, monospace;
-   font-size: 2em;
-}
-
-nav li a{
-   text-decoration: none;
-   color: #c7bcb9;
-   display: block;
-   padding: 2em;
-}
-
-nav li:hover{
-   background-color: #947657;
-   color: #302b29;
-   border:#c7bcb9;
-   border-radius: 40%;
-}
-/*********************************************/
-
+/*basic.html*/
 /*********************************************/
 /* Styles for Main */
 main{
-   background:linear-gradient(#302b29, #4b3e38, rgb(93, 125, 93));
-   font-family: 'Labrada', serif;
-   color: #c7bcb9;
-   height: 100%;
-   width: 100%;
-
-   display: block;
-   text-align: center;
-   align-content: center;
-
+  display: block;
+  text-align: center;
+  align-content: center;
+  padding: 2%;
 }
 
+/* Styles for nav*/
+.nav{
+  width: 100%;
+  padding: 2%;
+  margin: 0, 20, 0, 20;
+}
 
+.nav ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav li a{
+  text-decoration: none;
+  color: #56231d;
+}
+
+.navicon a {
+  font-size: larger;
+  border-radius: 50%;
+  background-color: #c47e76;
+}
+
+.navicon a:hover{
+  background-color: #e04d3d83;
+}
 /*********************************************/
 
+/*********************************************/
+/*(home.html)*/
+.loggin{
+  display: flex;
+  float: right;
+  padding: .5%;
+  background-color: #c47e76;
+  background-size: 200%;
+  border-radius: 75%;
+}
+
+.loggin a{
+  color: #56231d;
+  text-decoration: none;
+}
+
+.loggin :hover{
+  background-color: #e04d3d83;
+  border-radius: 75%;
+}
+
+.reg{
+  align-items: left;
+}
+
+/* PLANNER */
+.PLANNER{
+  display: block;
+  align-items: center;
+  margin: 10, 25, 10,25;
+  padding: 3%;
+}
 
 /* Style rules for table */
 
 table {
-  border-spacing: 0px;
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 15px;
-  background-color: #947657;
-  text-align: center; 
+text-align: center;
+table-layout: fixed;
+width: 100%;
+margin: auto;
 }
 
-th {
-  font-weight: bold;
-  border: 1px solid #193318; 
-  padding: 8px;
+table a{
+  text-decoration: none;
+  color: #3c1712;
 }
 
-td {
-  border: 1px solid #193318; 
-  padding: 8px;
+table a:hover{
+  background-color: #e04d3d83;
+}
+
+table ul{
+  list-style: none;
+}
+
+th{
+  font-size: large;
+}
+
+
+th, td{
+ padding: 8px;
+ text-align: center;
+ align-content: center;
+}
+.howdy{
+  text-decoration: underline;
+  text-decoration-color: #56231d;
+}
+.weekRow{
+  justify-content: space-between;
+}
+
+.plannertbl{
+  background-color: rgba(237, 191, 181, 0.801);
+}
+
+.entrylist-box{
+  background-color: #eaa68c;
+  border: 2px solid;
+  border-color: #56231d;
+}
+
+.todolist-box{
+  background-color: #c47150;
+  border: 2px solid;
+  border-color: #56231d;
 }
 
 /*********************************************/
 
-
+.crud-box{
+  max-width: 650px;
+  margin: auto;
+  box-shadow: 2px 2px 13px -4px #00000079;
+  background-color: #f4b8a0;
+}
 
 /*********************************************/
 /*Media Queries*/
@@ -139,103 +214,103 @@ td {
 /*Styles for Mobile*/
 @media(max-width:480px){
 
-       /* Choose Display*/
-       .mobileDisplay{
-           display: block;
-       }
-     
-       .tabletDisplay{
-           display: none;
-       }
+      /* Choose Display*/
+      .mobileDisplay{
+          display: block;
+      }
+    
+      .tabletDisplay{
+          display: none;
+      }
 
-       .deskDisplay{
-           display: none;
-       }
-     
- /* Rules */
+      .deskDisplay{
+          display: none;
+      }
+    
+/* Rules */
 
-   main{
-    margin: 0;
-   }
+  main{
+   margin: 0;
+  }
 
-   main p{
-       margin: 0% 15%
-   }
+  main p{
+      margin: 0% 15%
+  }
 
-   .navbar h1{
-       font-size: 1em;
-       padding: .5em .75em 0em
-   }
+  .navbar h1{
+      font-size: 1em;
+      padding: .5em .75em 0em
+  }
 
- nav li {
-   border-top: none;
-   display: inline-block;
-   text-align: center;
-   padding: .2em 3em 0em;
- }
+nav li {
+  border-top: none;
+  display: inline-block;
+  text-align: center;
+  padding: .2em 3em 0em;
+}
 
-   nav{
-       max-width: 100%
-   }
+  nav{
+      max-width: 100%
+  }
 
-   nav li a{
+  nav li a{
 
-       font-size: .5em;
-   }
+      font-size: .5em;
+  }
 
-   }
+  }
 
 
 
 /* Styles for Tablet  */
 @media screen and (min-width:481px){
 
-       /* Choose Display*/
-       .tabletDisplay{
-       display: block;
-       }
-   
-       .mobileDisplay{
-       display: none;
-       }
+      /* Choose Display*/
+      .tabletDisplay{
+      display: block;
+      }
+  
+      .mobileDisplay{
+      display: none;
+      }
 
-       .deskDisplay{
-           display: none;
-       }
+      .deskDisplay{
+          display: none;
+      }
 
-         }
+        }
 /* Rules */
 
-   nav li {
-     border-top: none;
-     display: inline-block;
-     font-size: 1.25em;
-   }
-   
-   nav li a {
-     padding: 0.5em;
-   }
-   
+  nav li {
+    border-top: none;
+    display: inline-block;
+    font-size: 1.25em;
+  }
+  
+  nav li a {
+    padding: 0.5em;
+  }
+  
 
 
 
 /* Styles for Desktop  */
 @media screen and (min-width:1015px){
 
-       /* Choose Display*/
-       .deskDisplay{
-         display: block;
-       }
-       
-       .mobileDisplay{
-         display: none;
-       }
-   
-       .tabletDisplay{
-           display: none;
-         }
+      /* Choose Display*/
+      .deskDisplay{
+        display: block;
+      }
+      
+      .mobileDisplay{
+        display: none;
+      }
+  
+      .tabletDisplay{
+          display: none;
+        }
 
-       
+      
 }
 /*********************************************/
 
@@ -247,17 +322,8 @@ td {
 /* Basic Footer styles */
 
 footer{
-   padding: 3% 0;
-
-   background-color: #193318;
-   color: #795e43;
-
-   text-align: center;
-   font-size: small;
-}
-
-footer a{
-   color: #e2b88d;
-   text-decoration: none;
+  padding: 3% 0;
+  text-align: center;
+  font-size: small;
 }
 /*********************************************/

@@ -1,9 +1,15 @@
+{% extends 'todueMountain/basic.html' %}
+{% block content %} 
+<div class='crud-box'>
+
 <h1>Register an Account:</h1>
 
-<form method="POST">
+<form class='reg' method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Register">
 </form>
 
 <p>If you have an account, sign in <a href='register'>here</a></p>
+</div>
+{%endblock%}

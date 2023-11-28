@@ -1,78 +1,69 @@
 {% extends 'todueMountain/basic.html' %}
 {% block content %}          <!-- To those learning html, do not mind the yellow bits      -->
+<div class='loggin'>
+    {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}"><i class='fas fa-sign-out-alt'></i>Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}"><i class='fas fa-sign-in-alt'></i>Login</a>
+        {%endif%}
+    </div>
 
 <div class='PLANNER'>
-
-    {% if request.user.is_authenticated %}
-        <h1>Howdy, {{request.user}}</h1>
-            <a href="{% url 'logout' %}">Logout</a>
-    {% else %}
-    <a href="{% url 'login' %}">Login</a>
-    {%endif%}
-    
-        <table>
+        <table class = 'plannertbl'>
+            <th class='howdy'>Howdy, {{request.user}}</th>
         <tr>
     <div class='weekRow'> 
         <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
     </div>
     </tr>
-<br>
-    <tr>
 
+    <tr>
 <td><!----------------------------- IT IS THE FIRST DAY O' THE WEEK SUNDAY  ---------------------->
-<div class = 'weekday'>
 
 <div class='entrylist-box'>
-    <table>
+    
         <h1>Today I...</h1>
-            <tr>
+            <ul>
             {% for journalEntry in entry_list %}
                 {% if journalEntry.Entrydotf == "Sunday" %}
-                    <td><a href = {% url "entry_detail" journalEntry.id %}>
-                        {{journalEntry}}</a></td>
+                    <li><a href = {% url "entry_detail" journalEntry.id %}>
+                        {{journalEntry}}</a></li>
                 {% endif %}
-            </tr>
-            {% empty %} <!-- Once there is one entry, it will not work. Must find a way to find out if there are none with the correct dotw-->
-            <div class='emptytext'> <h2>never give up!</h2> </div>              <!--empty text referring to placeholders and nothing text-->
+                    </ul>
             {% endfor %}
-        </table>
+        
 </div>
-<br>
+
 <div class='todolist-box'>
     <h1>To Do:</h1>
             <ul>
         {% for tdtask in task_list %}
-            {% if tdtask.Taskdotf == "Sunday"%}
+            {% if tdtask.Taskdotf == "Sunday" %}
                 <li><a href= {% url "task_detail" tdtask.id %}>
+                    
                      {{tdtask.TaskTitle}}</a></li>
             {% endif %}
         </ul>
-    {% empty %} <!--if it is empty:                     (basically)-->
-            <div class='emptytext'><h2>Ooh free day!</h2></div> <!-- display mountain climber going down hill-->
     {% endfor %}
 </div>
 
-</div>
 </td>
 
 <td><!----------------------------- IT IS THE SECOND DAY O' THE WEEK MONDAY  ---------------------->
 
-        <div class='entrylist-box'>
-            <table>
+        <div class='entrylist-box'>    
                 <h1>Today I...</h1>
-                    <tr>
+                    <ul>
                     {% for journalEntry in entry_list %}
                         {% if journalEntry.Entrydotf == "Monday" %}
-                            <td><a href = {% url "entry_detail" journalEntry.id %}>
-                                {{journalEntry}}</a></td>
+                            <li><a href = {% url "entry_detail" journalEntry.id %}>
+                                {{journalEntry}}</a></li>
                         {% endif %}
-                    </tr>
-                    {% empty %}
-                    <div class='emptytext'> <h2>practice endurance</h2> </div>
+                            </ul>
                     {% endfor %}
-                </table>
+                
         </div>
-        <br>    
+
         <div class='todolist-box'>
             <h1>To Do:</h1>
                     <ul>
@@ -82,29 +73,23 @@
                              {{tdtask.TaskTitle}}</a></li>
                     {% endif %}
                 </ul>
-            {% empty %}
-                    <div class='emptytext'><h2>All Done?</h2></div>
             {% endfor %}
         </div>
 </td>
 
 <td><!----------------------------- IT IS THE THIRD DAY O' THE WEEK TUESDAY  ---------------------->
     <div class='entrylist-box'>
-        <table>
-            <h1>Today I...</h1>
-                <tr>
-                {% for journalEntry in entry_list %}
-                    {% if journalEntry.Entrydotf == "Tuesday" %}
-                        <td><a href = {% url "entry_detail" journalEntry.id %}>
-                            {{journalEntry}}</a></td>
-                    {% endif %}
-                </tr>
-                {% empty %}
-                <div class='emptytext'> <h2>can satisfy my obligations and desires.</h2> </div>
-                {% endfor %}
-            </table>
+        <h1>Today I...</h1>
+        <ul>
+        {% for journalEntry in entry_list %}
+            {% if journalEntry.Entrydotf == "Tuesday" %}
+                <li><a href = {% url "entry_detail" journalEntry.id %}>
+                    {{journalEntry}}</a></li>
+            {% endif %}
+                </ul>
+        {% endfor %}
     </div>
-    <br>
+
     <div class='todolist-box'>
         <h1>To Do:</h1>
                 <ul>
@@ -114,29 +99,23 @@
                          {{tdtask.TaskTitle}}</a></li>
                 {% endif %}
             </ul>
-        {% empty %}
-                <div class='emptytext'><h2>daydreamin?</h2></div>
         {% endfor %}
     </div>
 </td>
 
 <td><!----------------------------- IT IS THE FOURTH DAY O' THE WEEK WEDNESDAY  ---------------------->
     <div class='entrylist-box'>
-        <table>
-            <h1>Today I...</h1>
-                <tr>
-                {% for journalEntry in entry_list %}
-                    {% if journalEntry.Entrydotf == "Wednesday" %}
-                        <td><a href = {% url "entry_detail" journalEntry.id %}>
-                            {{journalEntry}}</a></td>
-                    {% endif %}
-                </tr>
-                {% empty %}
-                <div class='emptytext'> <h2>will spread kindness.</h2> </div>
-                {% endfor %}
-            </table>
+        <h1>Today I...</h1>
+        <ul>
+        {% for journalEntry in entry_list %}
+            {% if journalEntry.Entrydotf == "Wednesday" %}
+                <li><a href = {% url "entry_detail" journalEntry.id %}>
+                    {{journalEntry}}</a></li>
+            {% endif %}
+                </ul>
+        {% endfor %}
     </div>
-    <br>
+
     <div class='todolist-box'>
         <h1>To Do:</h1>
                 <ul>
@@ -146,29 +125,23 @@
                          {{tdtask.TaskTitle}}</a></li>
                 {% endif %}
             </ul>
-        {% empty %}
-                <div class='emptytext'><h2>Find the meaning of life: 42</h2></div>
         {% endfor %}
     </div>
 </td>
 
 <td><!----------------------------- IT IS THE FIFTH DAY O' THE WEEK THURSDAY  ---------------------->
     <div class='entrylist-box'>
-        <table>
-            <h1>Today I...</h1>
-                <tr>
-                {% for journalEntry in entry_list %}
-                    {% if journalEntry.Entrydotf == "Thursday" %}
-                        <td><a href = {% url "entry_detail" journalEntry.id %}>
-                            {{journalEntry}}</a></td>
-                    {% endif %}
-                </tr>
-                {% empty %}
-                <div class='emptytext'> <h2>remind myself to take moments to concentrate.</h2> </div>
-                {% endfor %}
-            </table>
+        <h1>Today I...</h1>
+                    <ul>
+                    {% for journalEntry in entry_list %}
+                        {% if journalEntry.Entrydotf == "Thursday" %}
+                            <li><a href = {% url "entry_detail" journalEntry.id %}>
+                                {{journalEntry}}</a></li>
+                        {% endif %}
+                            </ul>
+                    {% endfor %}
     </div>
-    <br>
+
     <div class='todolist-box'>
         <h1>To Do:</h1>
                 <ul>
@@ -178,29 +151,23 @@
                          {{tdtask.TaskTitle}}</a></li>
                 {% endif %}
             </ul>
-        {% empty %}
-                <div class='emptytext'><h2>vibe</h2></div>
         {% endfor %}
     </div>
 </td>
 
 <td><!----------------------------- THANK GOOB IT'S FRIDAY---------------------->
     <div class='entrylist-box'>
-        <table>
-            <h1>Today I...</h1>
-                <tr>
-                {% for journalEntry in entry_list %}
-                    {% if journalEntry.Entrydotf == "Friday" %}
-                        <td><a href = {% url "entry_detail" journalEntry.id %}>
-                            {{journalEntry}}</a></td>
-                    {% endif %}
-                </tr>
-                {% empty %}
-                <div class='emptytext'> <h2>will look for beauty in my day!</h2> </div>
-                {% endfor %}
-            </table>
+        <h1>Today I...</h1>
+                    <ul>
+                    {% for journalEntry in entry_list %}
+                        {% if journalEntry.Entrydotf == "Friday" %}
+                            <li><a href = {% url "entry_detail" journalEntry.id %}>
+                                {{journalEntry}}</a></li>
+                        {% endif %}
+                            </ul>
+                    {% endfor %}
     </div>
-    <br>
+
     <div class='todolist-box'>
         <h1>To Do:</h1>
                 <ul>
@@ -210,29 +177,23 @@
                          {{tdtask.TaskTitle}}</a></li>
                 {% endif %}
             </ul>
-        {% empty %}
-                <div class='emptytext'><h2>if nothing else, smile</h2></div>
         {% endfor %}
     </div>
 </td>
 
-<td><!----------------------------- IT IS THE SEVENTH DAY O' THE WEEK SATURDAY  ---------------------->
+<td><!----------------------------- THE SEVENTH DAY OF THE WEEK SATURDAY---------------------->
     <div class='entrylist-box'>
-        <table>
-            <h1>Today I...</h1>
-                <tr>
-                {% for journalEntry in entry_list %}
-                    {% if journalEntry.Entrydotf == "Saturday" %}
-                        <td><a href = {% url "entry_detail" journalEntry.id %}>
-                            {{journalEntry}}</a></td>
-                    {% endif %}
-                </tr>
-                {% empty %}
-                <div class='emptytext'> <h2>look forward to positive reflections!</h2> </div>
-                {% endfor %}
-            </table>
+        <h1>Today I...</h1>
+                    <ul>
+                    {% for journalEntry in entry_list %}
+                        {% if journalEntry.Entrydotf == "Saturday" %}
+                            <li><a href = {% url "entry_detail" journalEntry.id %}>
+                                {{journalEntry}}</a></li>
+                        {% endif %}
+                            </ul>
+                    {% endfor %}
     </div>
-    <br>
+
     <div class='todolist-box'>
         <h1>To Do:</h1>
                 <ul>
@@ -242,14 +203,9 @@
                          {{tdtask.TaskTitle}}</a></li>
                 {% endif %}
             </ul>
-        {% empty %}
-                <div class='emptytext'><h2>just chillin?</h2></div>
         {% endfor %}
     </div>
 </td>
-
-<tr>
-
 </table>
 
 </div>

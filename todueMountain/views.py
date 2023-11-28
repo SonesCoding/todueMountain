@@ -57,9 +57,14 @@ class task_detail(LoginRequiredMixin,DetailView):
 
 class createTask(LoginRequiredMixin,CreateView):
      model = tdTask
-     fields = ['TaskTitle', 'TaskDescr', 'Taskdotf']
+     fields = ['TaskTitle', 'TaskDescr', 'Taskdotf', 'checked']
      template_name = 'todueMountain/create_task.html'
      success_url = '/'
+     
+     def form_valid(self, form):
+         form.instance.user = self.request.user
+         return super(createTask, self).form_valid(form)
+     
      
                
 class updateTask(LoginRequiredMixin,UpdateView):
@@ -86,6 +91,9 @@ class createEntry(LoginRequiredMixin,CreateView):
      template_name = 'todueMountain/create_entry.html'
      success_url = '/'
      
+     def form_valid(self, form):
+         form.instance.user = self.request.user
+         return super(createEntry, self).form_valid(form)
                
 class updateEntry(LoginRequiredMixin,UpdateView):
      model = journalEntry
